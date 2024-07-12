@@ -1,7 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const { lendingPageController } = require("../controllers/index-controller");
+const {
+  homePageController,
+  productPageController,
+  galleryPageController,
+  aboutPageController,
+} = require("../controllers/index-controller");
 
-router.get("/", lendingPageController);
+router.get("/", homePageController);
+router.get("/product", productPageController);
+router.get("/gallery", galleryPageController);
+router.get("/about", aboutPageController);
 
 module.exports = router;
