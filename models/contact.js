@@ -1,31 +1,29 @@
-// creating a contact model and Schema object
-
 const mongoose = require("mongoose");
 
-const contactSchema = mongoose.Schema(
+const contactSchema = new mongoose.Schema(
   {
     firstname: {
-      type: "string",
-      minLength: 2,
-      maxLength: 10,
+      type: String, 
+      minlength: 2, 
+      maxlength: 10, 
       required: true,
     },
     lastname: {
       type: String,
-      minLength: 2,
-      maxLength: 10,
+      minlength: 2,
+      maxlength: 10,
       required: true,
     },
     email: {
       type: String,
-      minLength: 2,
-      maxLength: 10,
+      minlength: 2,
+      maxlength: 50, 
       required: true,
     },
     number: {
-      type: Number,
-      minLength: 2,
-      maxLength: 15,
+      type: String, // Changed to String to allow storing phone numbers with country codes
+      minlength: 7, // Minimum length for a valid phone number
+      maxlength: 15, // Maximum length for a valid phone number
       required: true,
     },
     message: {
@@ -38,4 +36,4 @@ const contactSchema = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model('contact', contactSchema);
+module.exports = mongoose.model('Contact', contactSchema); // Capitalize model name for convention
