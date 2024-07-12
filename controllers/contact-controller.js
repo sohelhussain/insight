@@ -18,7 +18,7 @@ module.exports.contactController = async (req, res, next) => {
             number,
             message
         });
-
+        
         // Handle successful creation
         res.redirect('/');
     } catch (error) {

@@ -7,6 +7,8 @@ const {
   aboutPageController,
 } = require("../controllers/index-controller");
 
+const {contactController} = require("../controllers/contact-controller");
+
 // Route to render the home page
 router.get("/", homePageController);
 
@@ -18,5 +20,8 @@ router.get("/gallery", galleryPageController);
 
 // Route to render the about page
 router.get("/about", aboutPageController);
+
+// Route to create a message
+router.post("/createMessage", contactController);
 
 module.exports = router;
