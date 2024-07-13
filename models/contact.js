@@ -65,8 +65,11 @@ function validateModel(data) {
     number: Joi.string().min(7).max(15).required().trim(),
 
     message: Joi.string().required().trim(),
-  });
-
+  })
+  .message({
+    'string.email': "Please enter a valid email",
+    'any.only': "only .com and .net domains are allowed"
+  })
   let { error } = schema.validate(data);
   return error;
 }

@@ -2,12 +2,12 @@ const express = require('express');
 const app = express();
 const indexRoute = require('./routes/index-router');
 const path = require('path');
-const db = require('./config/mongodb-connection');
 const PORT = process.env.PORT || 3000; // Use the port from environment variables or default to 3000
 
 
-// Create configuration
+// Load environment variables from .env file
 require('dotenv').config();
+const db = require('./config/mongodb-connection');
 
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
