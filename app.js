@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const indexRoute = require('./routes/index-router');
 const path = require('path');
+const expressSession = require('express-session');
 const PORT = process.env.PORT || 3000; // Use the port from environment variables or default to 3000
 
 
@@ -18,6 +19,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Middleware to parse JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(expressSession({
+    resave: false,
+    saveUninitialized: false,
+    secret: process.env.SECRET_KEY
+}))
 
 // Use the index router for the root path
 app.use('/', indexRoute);
