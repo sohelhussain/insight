@@ -8,7 +8,6 @@ module.exports.contactController = async (req, res, next) => {
 
     // Validate the input using Joi
     const err = validateModel({ fullname, email, number, city });
-    console.log(err);
     if (err) {
       req.flash("validationError",err.details.map((err) => err.message)
       );
@@ -31,7 +30,6 @@ module.exports.contactController = async (req, res, next) => {
       city,
     });
 
-    console.log(contact);
     // Handle successful creation
     res.redirect("/");
   } catch (error) {
