@@ -7,14 +7,12 @@ module.exports.contactController = async (req, res, next) => {
     console.log(req.body);
 
     // Validate the input using Joi
-    const error = validateModel({ fullname, email, number, city });
-    console.log(error);
-    if (error) {
-      req.flash(
-        "validationError",
-        err.details.map((err) => err.message)
+    const err = validateModel({ fullname, email, number, city });
+    console.log(err);
+    if (err) {
+      req.flash("validationError",err.details.map((err) => err.message)
       );
-      return res.status(400).json({ error: error.details[0].message });
+      return res.status(200).send(err.message);
     }
 
     // Check for existing email in the database
