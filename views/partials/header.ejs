@@ -1,9 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      .page7 > .overlay {
+        background: linear-gradient(to right, #2c2b2b, #ffffff00);
+      }
+      .page2-part1>.overlay{
+        background: linear-gradient(to right, #2c2b2b, #ffffff00);
+      }
+      .page2-part2>.overlay{
+        background: linear-gradient(to right, #2c2b2b, #ffffff00);
+      }
+    </style>
+  </head>
+  <body>
+    <section
+      class="h-[12vh] w-[100vh] flex items-center lg:w-[100vw] justify-between"
+    >
+      <section class="nav-part1 lg:w-[15vw]">
+        <img
+          class="h-[10vh] px-7 py-3 ml-3 lg:h-[15vh]"
+          src="/images/logo.webp"
+          alt=""
+        />
+      </section>
+
+      <i class="ri-menu-line text-4xl ml-80 lg:hidden"></i>
+      <section
+        class="nav-part2 hidden font-[Marcellus]  lg:w-[23vw] lg:flex  lg:items-center lg:justify-between "
+      >
+        <a href="">HOME</a>
+        <a href="">PRODUCT</a>
+        <a href="">GALLERY</a>
+        <a href="">ABOUT</a>
+      </section>
+      <button
+        class="px-7 py-2 border-2 border-sky-500 mr-5 text-sky-500 rounded-full font-[Poppins]"
+      >
+        <span>CONTACT</span>
+      </button>
+    </section>
+  </body>
+</html>
