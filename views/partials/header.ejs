@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="/stylesheets/output.css">
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -13,47 +14,43 @@
       .page7 > .overlay {
         background: linear-gradient(to right, #2c2b2b, #ffffff00);
       }
-      .page2-part1>.overlay{
+      .page2-part1 > .overlay {
         background: linear-gradient(to right, #2c2b2b, #ffffff00);
       }
-      .page2-part2>.overlay{
+      .page2-part2 > .overlay {
         background: linear-gradient(to right, #2c2b2b, #ffffff00);
       }
       .part-1 .overlay {
         background: rgba(0, 0, 0, 0.671);
       }
-      
-    
     </style>
   </head>
-  <body>
-  
-    <section
-      class="h-[12vh] w-[100vh] flex items-center lg:w-[100vw] justify-between"
+  <body class="overflow-x-hidden">
+    <nav
+      class="h-[12vh] w-[100vh] flex items-center lg:w-full justify-between"
     >
-      <section class="nav-part1 lg:w-[15vw]">
+      <div class="nav-part1 lg:w-[15vw] lg:w-[15vw]">
         <img
-          class="h-[10vh] px-7 py-3 ml-3 lg:h-[15vh]"
+          class="h-[10vh] px-7 py-3 ml-3 lg:h-full lg:w-full object-cover"
           src="/images/logo.webp"
           alt=""
         />
-      </section>
+      </div>
 
       <i class="ri-menu-line text-4xl ml-80 lg:hidden"></i>
-      <section
-        class="nav-part2 hidden font-[Marcellus]  lg:w-[23vw] lg:flex  lg:items-center lg:justify-between "
+      <div
+        class="nav-part2 hidden font-[Marcellus] lg:w-[23vw] lg:flex lg:items-center lg:justify-between"
       >
         <a href="/">HOME</a>
         <a href="/product">PRODUCT</a>
         <a href="/gallery">GALLERY</a>
         <a href="/about">ABOUT</a>
-      </section>
+      </div>
       <button
         class="px-7 py-2 border-2 border-sky-500 mr-5 text-sky-500 rounded-full font-[Poppins]"
       >
         <span>CONTACT</span>
       </button>
-    </section>
- 
+    </nav>
   </body>
 </html>
