@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <link rel="stylesheet" href="/stylesheets/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/stylesheets/output.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -23,21 +23,22 @@
       .part-1 .overlay {
         background: rgba(0, 0, 0, 0.671);
       }
+      .page1 .overlay {
+        background: rgba(0, 0, 0, 0.562);
+      }
     </style>
   </head>
   <body class="overflow-x-hidden">
-    <nav
-      class="h-[12vh] w-[100vh] flex items-center lg:w-full justify-between"
-    >
+    <nav class="h-[12vh] w-[100vh] flex items-center lg:w-full justify-between">
       <div class="nav-part1 lg:w-[15vw]">
         <img
-        class="h-auto w-auto max-h-[10vh] max-w-full px-7 py-3 ml-3 object-contain"
-        src="/images/logo.webp"
+          class="h-auto w-auto max-h-[10vh] max-w-full px-7 py-3 ml-3 object-contain"
+          src="/images/logo.webp"
           alt=""
         />
       </div>
 
-      <i class=" menubar ri-menu-line text-4xl ml-80 lg:hidden"></i>
+      <i class="menubar ri-menu-line text-4xl ml-80 lg:hidden"></i>
       <div
         class="nav-part2 hidden font-[Marcellus] lg:w-[23vw] lg:flex lg:items-center lg:justify-between"
       >
@@ -53,10 +54,30 @@
       </button>
     </nav>
 
-    
+    <div
+      class="navbar h-[62vh] left-[100%] top-0 w-[70vw] bg-black fixed transition-transform transform lg:hidden"
+    >
+      <i class="closebar ri-close-line text-4xl text-white m-4"></i>
+      <div class="flex flex-col items-start p-4">
+        <a href="/" class="text-white py-2">HOME</a>
+        <a href="/product" class="text-white py-2">PRODUCT</a>
+        <a href="/gallery" class="text-white py-2">GALLERY</a>
+        <a href="/about" class="text-white py-2">ABOUT</a>
+      </div>
+    </div>
 
-  <script>
-    
-  </script>
+    <script>
+      const menuBar = document.querySelector(".menubar");
+      const closeBar = document.querySelector(".closebar");
+      const navbar = document.querySelector(".navbar");
+
+      menuBar.addEventListener("click", () => {
+        navbar.style.transform = "translateX(-100%)";
+      });
+
+      closeBar.addEventListener("click", () => {
+        navbar.style.transform = "translateX(100%)";
+      });
+    </script>
   </body>
 </html>
